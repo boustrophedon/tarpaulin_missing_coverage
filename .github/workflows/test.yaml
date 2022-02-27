@@ -9,8 +9,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Install libseccomp
-        run: sudo apt-get install libseccomp-dev
       - name: Run tests
         run: cargo test --tests --examples
 
@@ -24,6 +22,8 @@ jobs:
         uses: actions-rs/tarpaulin@v0.1
         with:
           args: '--tests --examples --out Lcov --output-dir ./coverage'
+      - name: Check file was actually created
+        run: cat /tmp/whatever
       - name: Upload coverage to coveralls
         uses: coverallsapp/github-action@master
         with:
