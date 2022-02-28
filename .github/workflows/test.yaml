@@ -21,7 +21,7 @@ jobs:
       - name: Install cargo tarpaulin
         run: cargo install cargo-tarpaulin
       - name: Run tarpaulin
-        run: cargo tarpaulin --follow-exec --tests --examples --out Lcov --output-dir ./coverage
+        run: cargo tarpaulin --tests --examples --out Lcov --output-dir ./coverage
       - name: Check file was actually created
         run: cat /tmp/whatever
       - name: Upload coverage to coveralls
