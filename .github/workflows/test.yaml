@@ -21,7 +21,7 @@ jobs:
       - name: Run cargo tarpaulin
         uses: actions-rs/tarpaulin@v0.1
         with:
-          args: '--tests --examples --out Lcov --output-dir ./coverage'
+          args: '--follow-exec --tests --examples --out Lcov --output-dir ./coverage'
       - name: Check file was actually created
         run: cat /tmp/whatever
       - name: Upload coverage to coveralls
