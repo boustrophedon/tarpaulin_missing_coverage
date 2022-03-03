@@ -15,8 +15,3 @@ fn main() {
         .spawn()
         .unwrap();
 }
-
-#[test]
-fn call_main() {
-    main();
-}
